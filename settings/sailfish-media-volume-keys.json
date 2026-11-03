@@ -1,0 +1,25 @@
+{
+    "entries": [
+    {
+        "path": "system_settings/look_and_feel/media_volume_keys",
+        "title": "Volume keys",
+        "type": "page",
+        "icon": "image://theme/icon-m-speaker-on",
+        "order": 260,
+        "params": {
+            "source": "/usr/share/jolla-settings/pages/sailfish-media-volume-keys/MediaVolumeKeysPage.qml"
+        }
+    },
+    {
+        "path": "system_settings/look_and_feel/media_volume_keys/switch",
+        "type": "custom",
+        "title": "Media volume keys",
+        "icon": "image://theme/icon-m-speaker-on",
+        "params": {
+            "source": "/usr/share/jolla-settings/pages/sailfish-media-volume-keys/MediaVolumeKeysToggle.qml",
+            "type": "grid",
+            "settings_path": "system_settings/look_and_feel/media_volume_keys"
+        }
+    }
+    ]
+}
