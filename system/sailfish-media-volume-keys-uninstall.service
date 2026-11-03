@@ -1,0 +1,7 @@
+[Unit]
+Description=Media volume keys: remove the package (started from Settings > Volume keys)
+
+[Service]
+Type=oneshot
+ExecStart=/bin/sh -c 'pkcon --noninteractive remove sailfish-media-volume-keys || rpm -e sailfish-media-volume-keys'
+TimeoutStartSec=300

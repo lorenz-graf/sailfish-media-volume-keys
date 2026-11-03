@@ -1,0 +1,21 @@
+/*
+ * Media volume keys: let the user at the device uninstall this package from
+ * Settings > Volume keys without a password prompt (Sailfish has no polkit agent,
+ * so anything that asks would just fail).
+ *
+ * Only "start", and only this one unit. It takes no input from the caller and
+ * only removes this package. Everything else keeps its default policy.
+ */
+polkit.addRule(function(action, subject) {
+    if (action.id !== "org.freedesktop.systemd1.manage-units") {
+        return polkit.Result.NOT_HANDLED;
+    }
+    if (!subject.active || !subject.local) {
+        return polkit.Result.NOT_HANDLED;
+    }
+    if (action.lookup("verb") === "start" &&
+            action.lookup("unit") === "sailfish-media-volume-keys-uninstall.service") {
+        return polkit.Result.YES;
+    }
+    return polkit.Result.NOT_HANDLED;
+});

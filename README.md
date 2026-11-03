@@ -20,6 +20,7 @@ Nothing is patched. The homescreen's volume control (`volumecontrol/VolumeContro
 - [`settings/sailfish-media-volume-keys.json`](settings/sailfish-media-volume-keys.json): the Settings entries (page and Top menu toggle).
 - [`settings/MediaVolumeKeysPage.qml`](settings/MediaVolumeKeysPage.qml): the page in Settings.
 - [`settings/MediaVolumeKeysToggle.qml`](settings/MediaVolumeKeysToggle.qml): the Top menu toggle.
+- [`system/sailfish-media-volume-keys-uninstall.service`](system/sailfish-media-volume-keys-uninstall.service) and [`system/49-sailfish-media-volume-keys.rules`](system/49-sailfish-media-volume-keys.rules): the **Uninstall** button. The polkit rule lets the user at the device start only this one unit, which only removes this package.
 
 Changes take effect immediately, without a restart. A future OS update could rename or remove the key; the switch would then do nothing.
 
@@ -52,7 +53,7 @@ dconf read /jolla/sound/force_mediavolume
 ## Undo
 
 - **Switch:** turn it off in Settings → Volume keys or in the Top menu.
-- **Package:** `devel-su pkcon remove sailfish-media-volume-keys`. Uninstalling also switches the setting back off for users who are logged in.
+- **Package:** Settings → Volume keys → **Uninstall**, then accept. It switches the setting back off and removes the package (the page and the Top menu toggle go with it). Removing the package with `devel-su pkcon remove sailfish-media-volume-keys` also switches the setting back off for users who are logged in.
 - **By hand:** `dconf reset /jolla/sound/force_mediavolume`
 
 ## Build

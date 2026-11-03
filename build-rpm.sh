@@ -10,7 +10,7 @@ VERSION=1.0
 
 TOP=$(pwd)/build
 rm -rf "$TOP" && mkdir -p "$TOP/SOURCES"
-cp settings/* LICENSE "$TOP/SOURCES/"
+cp settings/* system/* LICENSE "$TOP/SOURCES/"
 
 rpmbuild -bb --quiet \
     --define "_topdir $TOP" \
@@ -18,6 +18,7 @@ rpmbuild -bb --quiet \
     --define "_binary_payload w9.gzdio" \
     --define "_rpmformat 4" \
     --define "_prefix /usr" --define "_datadir /usr/share" \
+    --define "_unitdir /usr/lib/systemd/system" \
     rpm/sailfish-media-volume-keys.spec
 mv "$TOP"/RPMS/noarch/*.rpm "$TOP/"
 echo "built: $(ls "$TOP"/*.rpm)"
