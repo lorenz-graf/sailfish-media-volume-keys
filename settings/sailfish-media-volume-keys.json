@@ -13,7 +13,7 @@
     {
         "path": "system_settings/look_and_feel/media_volume_keys/switch",
         "type": "custom",
-        "title": "Media volume keys",
+        "title": "Media keys",
         "icon": "image://theme/icon-m-speaker-on",
         "params": {
             "source": "/usr/share/jolla-settings/pages/sailfish-media-volume-keys/MediaVolumeKeysToggle.qml",

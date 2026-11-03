@@ -11,7 +11,7 @@ A switch for **Sailfish OS** that makes the volume keys always change the **medi
 
 Two ways to switch it:
 
-- **Top menu toggle "Media volume keys":** flip it from anywhere, e.g. right before a video. Add it once in Settings → Top menu.
+- **Top menu toggle "Media keys":** flip it from anywhere, e.g. right before a video. Add it once in Settings → Top menu.
 - **Settings → Volume keys** (in Look and feel, next to Sounds and feedback): the switch **Always control media volume**, plus **Uninstall**.
 
 The ringtone volume stays in Settings → Sounds and feedback and in the Top menu.
@@ -31,14 +31,14 @@ Changes take effect immediately, without a restart. A future OS update could ren
 
 ## Install
 
-The package `sailfish-media-volume-keys-<version>-<release>.noarch.rpm` adds the **Media volume keys** Top menu toggle and **Settings → Volume keys** (in Look and feel, next to Sounds and feedback).
+The package `sailfish-media-volume-keys-<version>-<release>.noarch.rpm` adds the **Media keys** Top menu toggle and **Settings → Volume keys** (in Look and feel, next to Sounds and feedback).
 
 1. Install the package. Until it's on OpenRepos/Storeman: download it from the releases and install it as root:
    ```
    devel-su pkcon install-local sailfish-media-volume-keys-<version>-<release>.noarch.rpm
    ```
 2. Close Settings completely and reopen it.
-3. Settings → **Top menu** → add the **Media volume keys** toggle.
+3. Settings → **Top menu** → add the **Media keys** toggle.
 4. Switch it on, in the Top menu or in Settings → **Volume keys** (**Always control media volume**).
 
 ## Without the package
