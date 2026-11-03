@@ -6,7 +6,7 @@
 set -eu
 cd "$(dirname "$0")"
 
-VERSION=1.0
+VERSION=1.1
 
 TOP=$(pwd)/build
 rm -rf "$TOP" && mkdir -p "$TOP/SOURCES"

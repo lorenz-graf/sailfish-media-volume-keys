@@ -5,7 +5,7 @@
 
 Name:       sailfish-media-volume-keys
 Version:    %{mvk_version}
-Release:    4
+Release:    1
 Summary:    Make the volume keys always control media volume
 License:    MIT
 URL:        https://github.com/lorenz-graf/sailfish-media-volume-keys
