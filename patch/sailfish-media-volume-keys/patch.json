@@ -1,0 +1,9 @@
+{
+    "name": "sailfish-media-volume-keys",
+    "display_name": "Volume keys",
+    "description": "Choose what the volume keys control (ringtone, media or alarm volume) and control the alarm volume while the Clock app is open. Adds an alarm and timer volume slider and these options to Settings > Sounds and feedback, plus Alarm volume and Media keys for the Top menu.",
+    "category": "homescreen",
+    "author": "lorenz-graf",
+    "version": "2.0",
+    "compatible": ["5.2.0.22"]
+}

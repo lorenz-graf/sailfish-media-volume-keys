@@ -1,16 +1,20 @@
 #!/bin/sh
-# Builds build/sailfish-media-volume-keys-<version>-<release>.noarch.rpm
+# Packages the patch in patch/sailfish-media-volume-keys/ (made by build-patch.sh) as
+# build/sailfish-media-volume-keys-<version>-<release>.noarch.rpm
+# The version comes from patch.json (VERSION= in build-patch.sh), the release from
+# rpm/sailfish-media-volume-keys.spec.
 # Needs rpmbuild (Arch: pacman -S rpm-tools). Sailfish has rpm 4.16, so the package is
-# written in rpm v4 format with a gzip payload (rpm 6 defaults to v6 + zstd), and the
-# directory macros are set to Sailfish's values, since the build host's can differ.
+# written in rpm v4 format with a gzip payload (rpm 6 defaults to v6 + zstd).
 set -eu
 cd "$(dirname "$0")"
 
-VERSION=1.1
+NAME=sailfish-media-volume-keys
+VERSION=$(sed -n 's/^ *"version": *"\([^"]*\)".*/\1/p' patch/$NAME/patch.json)
+[ -n "$VERSION" ] || { echo "no version in patch/$NAME/patch.json" >&2; exit 1; }
 
 TOP=$(pwd)/build
 rm -rf "$TOP" && mkdir -p "$TOP/SOURCES"
-cp settings/* system/* LICENSE "$TOP/SOURCES/"
+cp patch/$NAME/patch.json patch/$NAME/unified_diff.patch LICENSE "$TOP/SOURCES/"
 
 rpmbuild -bb --quiet \
     --define "_topdir $TOP" \
@@ -18,7 +22,6 @@ rpmbuild -bb --quiet \
     --define "_binary_payload w9.gzdio" \
     --define "_rpmformat 4" \
     --define "_prefix /usr" --define "_datadir /usr/share" \
-    --define "_unitdir /usr/lib/systemd/system" \
-    rpm/sailfish-media-volume-keys.spec
+    rpm/$NAME.spec
 mv "$TOP"/RPMS/noarch/*.rpm "$TOP/"
 echo "built: $(ls "$TOP"/*.rpm)"

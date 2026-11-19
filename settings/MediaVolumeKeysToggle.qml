@@ -3,17 +3,19 @@ import Sailfish.Silica 1.0
 import com.jolla.settings 1.0
 import Nemo.Configuration 1.0
 
-// Top menu toggle (Settings > Top menu > add "Media keys").
+// Top menu toggle (Settings > Top menu > add "Media keys"): on = the volume keys change the
+// media volume (the default), off = the ringtone volume. Same setting as "Volume keys
+// control" in Settings > Sounds and feedback.
 SettingsToggle {
     name: "Media keys"
     icon.source: "image://theme/icon-m-speaker-on"
-    checked: !!forceMediaVolume.value
-    onToggled: forceMediaVolume.value = !forceMediaVolume.value
+    checked: target.value === "media"
+    onToggled: target.value = checked ? "ringtone" : undefined
 
     ConfigurationValue {
-        id: forceMediaVolume
+        id: target
 
-        key: "/jolla/sound/force_mediavolume"
-        defaultValue: false
+        key: "/apps/sailfish-media-volume-keys/target"
+        defaultValue: "media"
     }
 }
