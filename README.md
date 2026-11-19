@@ -33,7 +33,7 @@ If "Activate enabled patches when booting" is off in Patchmanager (the default),
 
 ### From the Patchmanager web catalog
 
-1. Settings → Patchmanager → pull down → **Web Catalog**, open **Volume keys** and tap the newest version under **Files** to install it.
+1. Settings → Patchmanager → pull down → **Web Catalog**, open **Volume Keys control Media, Alarms or Ringtone** (category Settings) and tap the newest version under **Files** to install it. Version 2.0.0 there is the same patch as the 2.0 RPM.
 2. Back in Patchmanager: activate **Volume keys**, then pull down → **Restart preloaded services** (this restarts the homescreen and closes open apps).
 3. Close Settings completely and reopen it.
 
