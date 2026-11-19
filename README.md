@@ -37,8 +37,6 @@ If "Activate enabled patches when booting" is off in Patchmanager (the default),
 2. Back in Patchmanager: activate **Volume keys**, then pull down → **Restart preloaded services** (this restarts the homescreen and closes open apps).
 3. Close Settings completely and reopen it.
 
-If version 1.x of this package (the RPM "Media volume keys") is installed, remove it first: Settings → Volume keys → **Uninstall**. Otherwise the patch can't be activated.
-
 ### As an RPM
 
 1. Download `sailfish-media-volume-keys-<version>-<release>.noarch.rpm` from the [releases](https://github.com/lorenz-graf/sailfish-media-volume-keys/releases) on the phone and tap it in the file manager to install it (with developer mode on), or install it as root:
@@ -47,8 +45,6 @@ If version 1.x of this package (the RPM "Media volume keys") is installed, remov
    ```
 2. Settings → Patchmanager: activate **Volume keys**, then pull down → **Restart preloaded services** (this restarts the homescreen and closes open apps).
 3. Close Settings completely and reopen it.
-
-**Updating from 1.x:** install the new RPM the same way. It replaces the old Settings page (Settings → Volume keys goes away), then activate the patch as in step 2. A **Media keys** toggle you had in the Top menu has to be added again.
 
 **Updating:** install the new RPM the same way. It deactivates the patch before replacing the files, so activate it again afterwards (step 2). Your settings stay. Patchmanager doesn't show update notifications for patches installed as an RPM; new versions are on the [releases](https://github.com/lorenz-graf/sailfish-media-volume-keys/releases) page.
 
